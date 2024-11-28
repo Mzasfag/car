@@ -1,0 +1,191 @@
+*{
+padding: 0;
+margin: 0;
+list-style: none;
+text-decoration: none;
+box-sizing: border-box;
+scroll-behavior: smooth;
+font-family: "Lexend", serif;
+}
+
+
+:root{
+--h1-font: 4rem;
+--h2-font:3.5rem;
+--p-font: 1.1rem;
+
+--bg-color: #fff;
+--text-color:#000;
+--main-color: #ffee02;
+--other-color : #727272;
+}
+
+
+body{
+background: var(--bg-color);
+color: var(--text-color);
+}
+
+
+header{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 25px 10%;
+background:red;
+transition: 0.5s ease;
+z-index: 100;
+}
+
+
+.logo img{
+width: 100%;
+height: 100%;
+}
+
+
+
+nav{
+display: flex;
+align-items: center;
+}
+
+.nav{
+display: flex;
+align-items: center;
+}
+
+.nav a{
+display: inline-block;
+font-size: var(--p-font);
+color: var(--bg-color);
+transition: 0.5s linear;
+margin: 0 20px;
+position: relative;
+z-index: 1000;
+}
+
+.nav a::before{
+content: '';
+position: absolute;
+top: -40px;
+right: 0;
+background: var(--main-color);
+width: 100%;
+height: 2px;
+display: none;
+transition: 1s linear;
+}
+
+.nav a:hover::before{
+display: block;
+}
+
+.nav a:hover{
+color: var(--main-color);
+}
+
+
+#menu-icon{
+cursor: pointer;
+color: var(--main-color);
+font-size: 30px;
+display: none;
+transition: 0.5s ease;
+}
+
+
+.nav-right{
+display: flex;
+align-items: center;
+}
+
+.nav-btn{
+display: inline-block;
+padding: 12px 40px;
+background: var(--main-color);
+font-size: var(--p-font);
+color: var(--text-color);
+margin-right: 30px;
+border-radius: 20px 0;
+transition: 0.8s ease;
+}
+
+.nav-btn:hover{
+border-radius: 0 20px;
+color: var(--main-color);
+background-color: var(--text-color);
+}
+
+.nav-right i{
+display: inline-block;
+color: var(--bg-color);
+font-size: 20px;
+transition: 0.5s ease;
+}
+
+.nav-right i:hover{
+transform: scale(1.2);
+}
+
+
+@media(max-width: 768px){
+header{
+padding: 10px 5%;
+}
+
+.logo img{
+width: 80px;
+}
+
+.nav-btn{
+font-size: 15px;
+margin-right: 10px;
+}
+
+#menu-icon{
+display: block;
+margin-right: 10px;
+transition: 0.5s ease;
+}
+
+.nav{
+position: absolute;
+top: 100%;
+flex-direction: column;
+left: -100%;
+width: 300px;
+background: var(--text-color);
+height: 70vh;
+align-items: flex-start;
+padding: 15px;
+transition: 0.5s ease;
+border-top-left-radius: 2px;
+border-bottom-right-radius: 2px;
+}
+
+.nav a{
+margin: 30px 0;
+}
+
+.nav a:hover{
+padding-left: 20px;
+}
+
+
+.nav a:hover::before{
+display: none;
+}
+
+
+#menu-icon:hover + .nav{
+left: 0;
+}
+
+
+}
